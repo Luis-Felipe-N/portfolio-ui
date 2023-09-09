@@ -19,4 +19,3 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Execute `npm i` na pasta raiz do projeto para instalar todas dependências.
 - Execute `npm run dev` para subir a aplicação em modo de desenvolvimento.
 - No navegador acesse: http://localhost:3000
-# portfolio-ui
