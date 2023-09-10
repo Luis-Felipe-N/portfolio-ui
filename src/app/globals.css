@@ -75,11 +75,7 @@
   }
 }
 
-.swiper-container-free-mode > .swiper-wrapper{
-  transition-timing-function : linear;
-}
-
-.mySwiper {
-  overflow: visible !important;
-
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-24rem * 33))}
 }

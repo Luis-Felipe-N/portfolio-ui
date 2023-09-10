@@ -1,17 +1,27 @@
 import { Fraunces, Instrument_Sans } from 'next/font/google'
 
 import { BannerProject } from './components/banner-project'
-import { Projects } from './components/projects'
+import { Project, Projects } from './components/projects'
 import { Skills } from './components/skills'
 import { Header } from './components/header'
+import { api } from './lib/api'
+import Link from 'next/link'
 
 const fraunces = Fraunces({ subsets: ['latin'] })
 const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
+const getProjects = async (): Promise<Project[]> => {
+  const response = await api.get('projects/home')
+  return response.data.projects
+}
+
 export default async function Home() {
+  const projects = await getProjects()
+  const currentYear = new Date().getFullYear()
+
   return (
     <main
-      className={`flex min-h-screen flex-col items-center py-24 lg:p-24 md:px-12 sm:px-8  ${instrumentSans.className}`}
+      className={`flex min-h-screen flex-col items-center py-24 ${instrumentSans.className}`}
     >
       <Header />
 
@@ -20,13 +30,9 @@ export default async function Home() {
           Luis Felipe Nunes
         </h1>
 
-        <span className="pb-4 py-2 text-lg line font-mono">
-          Desenvolvedor Fullstack
-        </span>
+        <span className="pb-4 py-2 text-lg line ">Desenvolvedor Fullstack</span>
 
-        <p
-          className={`text-lg sm:text-xl lg:text-2xl font-light ${fraunces.className}`}
-        >
+        <p className={`text-lg sm:text-xl lg:text-2xl font-light `}>
           Estudante de Ciências da Computação apaixonado por programação, com 2
           anos de experiência em Django e focado no desenvolvimento Fullstack
           com habilidades em React, Node.js.
@@ -38,15 +44,48 @@ export default async function Home() {
           projetos...
         </h2>
 
-        <p className={`text-lg mt-4 font-light ${fraunces.className}`}>
+        <p className={`text-lg mt-4 font-light `}>
           onde dediquei a maior parte do meu tempo, e é claro, muito estudo.
         </p>
 
-        <BannerProject />
-        <BannerProject />
+        {projects.map((project) => (
+          <BannerProject key={project.id} project={project} />
+        ))}
       </section>
       <Projects />
       <Skills />
+
+      <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex ">
+        <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
+          contato
+        </h2>
+
+        <div className="font-mono mt-4">
+          <nav className="flex gap-8">
+            <li>
+              <Link href={'https://github.com/Luis-Felipe-N'}>GitHub</Link>
+            </li>
+
+            <li>
+              <Link
+                href={'https://www.linkedin.com/in/luisfelipenunescarvalho/'}
+              >
+                LinkedIn
+              </Link>
+            </li>
+
+            <li>
+              <Link href={'/'}>Resumé</Link>
+            </li>
+          </nav>
+        </div>
+      </section>
+
+      <footer className="z-10 text-slate-400 max-w-5xl w-full items-start justify-between text-sm flex py-12 pb-0 mt-24  border-slate-50 border-t dark:border-slate-800">
+        <p className="uppercase">luisj2felipe@gmail.com</p>
+
+        <p className="">© {currentYear} Luis Felipe Nunes</p>
+      </footer>
     </main>
   )
 }

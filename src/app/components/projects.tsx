@@ -1,17 +1,5 @@
-'use client'
-
 import { api } from '@/lib/api'
 import { CardProject } from './card-project'
-import { useQuery } from '@tanstack/react-query'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-
-// import required modules
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 
 export interface Project {
   id: string
@@ -31,38 +19,32 @@ export interface Project {
   } | null
 }
 
-export function Projects() {
-  const {
-    data: projects,
-    isFetched,
-    isLoading,
-  } = useQuery<Project[]>(['projects'], async (): Promise<Project[]> => {
-    const response = await api.get('projects')
-    return response.data.projects
-  })
+const getProjects = async (): Promise<Project[]> => {
+  const response = await api.get('projects')
+  return response.data.projects
+}
 
-  console.log(projects)
+export async function Projects() {
+  const projects = await getProjects()
+
+  if (!projects) return null
+
+  const widthContainerProjects = 24 * (projects.length || 0) * 2
 
   return (
-    <section className="z-10 w-full items-start justify-between flex-col text-sm flex py-24">
-      <div className="w-full">
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={15}
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, Navigation]}
-          className="mySwiper"
-        >
-          {projects &&
-            projects.map((project) => (
-              <SwiperSlide key={project.id}>
-                <CardProject project={project} />
-              </SwiperSlide>
-            ))}
-        </Swiper>
+    <section className="z-10 w-full items-start justify-between flex-col text-sm flex overflow-hidden">
+      <div
+        className={`w-[${widthContainerProjects}rem] flex animate-[scroll_90s_linear_infinite] hover:aaaa`}
+      >
+        {projects &&
+          projects.map((project) => (
+            <CardProject key={project.id} project={project} />
+          ))}
+
+        {projects &&
+          projects.map((project) => (
+            <CardProject key={project.id} project={project} />
+          ))}
       </div>
     </section>
   )

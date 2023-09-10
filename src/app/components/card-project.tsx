@@ -11,30 +11,28 @@ interface CardProjectProps {
 const fraunces = Fraunces({ subsets: ['latin'] })
 
 export function CardProject({ project }: CardProjectProps) {
-  console.log(project.thumb.width)
   return (
-    <Link href={project.preview} className="flex-shrink-0 w-96 block">
-      <div className="w-96 p-4 dark:bg-slate-900 bg-slate-50 rounded-lg">
-        <div className="flex rounded items-center justify-center h-96 bg-gradient-to-r dark:from-slate-900 from-slate-100 to-blue-50">
+    <Link href={project.preview} className="h-full w-96 block px-1">
+      <div className="w-full p-4 dark:bg-slate-900 bg-slate-50 rounded-lg">
+        <div className="flex rounded items-center justify-center h-72 bg-gradient-to-r dark:from-slate-900 from-slate-100 to-blue-50">
           <Image
-            src={project.thumb.url}
+            src={project.thumb.url} // "https://framerusercontent.com/images/gtxhaHb4Xcmn4xzHti6evxds5nU.png"
             width={500}
             height={500}
-            className="rounded w-full"
+            quality={10}
+            className="rounded w-full block h-full object-cover"
             alt=""
           />
         </div>
 
-        <h3 className="text-xl font-semibold py-4 mt-4 flex items-center gap-2 text-slate-900 dark:text-slate-100">
+        <h3 className="text-xl font-semibold py-2 mt-4 flex items-center gap-2 text-slate-900 dark:text-slate-100">
           <span>{project.title}</span>
         </h3>
-        <p
-          className={`${fraunces.className} font-light text-slate-800 dark:text-slate-200`}
-        >
-          <span
-            dangerouslySetInnerHTML={{ __html: project.description }}
-          ></span>
-        </p>
+
+        <div
+          className={`font-light  text-slate-800 dark:text-slate-200 truncate ...`}
+          dangerouslySetInnerHTML={{ __html: project.description }}
+        ></div>
       </div>
     </Link>
   )

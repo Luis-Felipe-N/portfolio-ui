@@ -23,17 +23,12 @@ export async function Skills() {
         skills
       </h2>
 
-      <div className="mt-4 p-8 dark:bg-slate-800 bg-slate-100 w-full rounded-lg">
-        <ul className="flex gap-4 flex-wrap">
+      <div className="mt-4 w-full">
+        <div className="flex font-mono flex-wrap list-disc gap-8">
           {skills.map((skill) => (
-            <li
-              key={skill.id}
-              className="dark:bg-slate-800 bg-slate-200 px-8 py-2 text-lg rounded"
-            >
-              {skill.name}
-            </li>
+            <li key={skill.id}>{skill.name}</li>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

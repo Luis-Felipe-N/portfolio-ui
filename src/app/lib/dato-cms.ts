@@ -8,6 +8,7 @@ export const fetchCMSApi = async (query: string) => {
 
   const response = await fetch(ENDPOINT, {
     method: 'POST',
+    cache: undefined,
     headers: {
       'Content-Type': 'application/json',
       authorization: API_KEY,
@@ -26,92 +27,6 @@ export const fetchCMSApi = async (query: string) => {
 
   return json.data
 }
-
-// export async function getHomeProjects(): Promise<Project[]> {
-//   const { allHomeProjects } = await fetchCMSApi(`{
-//     allHomeProjects {
-//       idDoProjeto
-//     }
-//   }
-//   `)
-
-//   const idsProjects = allHomeProjects.map((project: {idDoProjeto: number}) => {
-//     return project.idDoProjeto
-//   })
-
-//   const data = await fetchCMSApi(`
-//   {
-//     allProjects(filter: {id: {in: [${idsProjects}]}}) {
-//       id
-//       _firstPublishedAt
-//       title
-//       thumb {
-//         alt
-//         url
-//         title
-//       }
-//       languages
-//       preview
-//       description
-//       code
-//       createdAt
-//       video {
-//         url
-//         provider
-//         providerUid
-//         thumbnailUrl
-//       }
-//     }
-//   }
-//   `)
-
-//   return data.allProjects
-// }
-
-// export async function getProjects(): Promise<Project[]> {
-
-//   const data = await fetchCMSApi(`
-//     {
-//       allProjects(orderBy: _createdAt_DESC, first: "100") {
-//         id
-//         _firstPublishedAt
-//         title
-//         thumb {
-//           alt
-//           url
-//           title
-//         }
-//         languages
-//         preview
-//         description
-//         code
-//         createdAt
-//         video {
-//           url
-//           provider
-//           providerUid
-//           thumbnailUrl
-//         }
-//       }
-//     }
-//     `)
-
-//     return data.allProjects
-// }
-
-// export async function getSkills(): Promise<Skill[]> {
-//   const data = await fetchCMSApi(`{
-//     allSkills(orderBy: _createdAt_ASC) {
-//       id
-//       name
-//       image {
-//         url
-//       }
-//     }
-//   }`)
-
-//   return data.allSkills
-// }
 
 // export async function getProject( id: string ) {
 //   const data = await fetchCMSApi(`{
