@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-container-free-mode > .swiper-wrapper{
+  transition-timing-function : linear;
+}
+
+.mySwiper {
+  overflow: visible !important;
+
+}

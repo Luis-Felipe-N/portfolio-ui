@@ -1,41 +1,14 @@
 import { Fraunces, Instrument_Sans } from 'next/font/google'
 
-import { Header } from './components/header'
-import { CardProject } from './components/card-project'
 import { BannerProject } from './components/banner-project'
-
-import { api } from './lib/api'
+import { Projects } from './components/projects'
+import { Skills } from './components/skills'
+import { Header } from './components/header'
 
 const fraunces = Fraunces({ subsets: ['latin'] })
 const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
-export interface Project {
-  id: string
-  code: string
-  preview: string
-  createdAt: string
-  description: string
-  title: string
-  thumb: {
-    url: string
-    width?: number
-    height?: number
-  }
-  languages: string
-  video: {
-    providerUid: string
-  } | null
-}
-
-const getProjects = async (): Promise<Project[]> => {
-  const { data } = await api('/projects')
-
-  return data.projects
-}
-
 export default async function Home() {
-  const projects = await getProjects()
-
   return (
     <main
       className={`flex min-h-screen flex-col items-center py-24 lg:p-24 md:px-12 sm:px-8  ${instrumentSans.className}`}
@@ -61,7 +34,7 @@ export default async function Home() {
       </section>
 
       <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">
-        <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight  dark:text-white">
+        <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
           projetos...
         </h2>
 
@@ -72,12 +45,8 @@ export default async function Home() {
         <BannerProject />
         <BannerProject />
       </section>
-
-      <section className="flex gap-4">
-        {projects.map((project) => (
-          <CardProject key={project.id} project={project} />
-        ))}
-      </section>
+      <Projects />
+      <Skills />
     </main>
   )
 }

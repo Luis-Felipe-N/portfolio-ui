@@ -13,7 +13,7 @@ export function BannerProject({ backdrop = true }: CardProjectProps) {
   return (
     <div className="w-full py-12">
       {backdrop ? (
-        <div className="bg-slate-800 rounded-3xl flex justify-center py-12">
+        <div className="dark:bg-slate-800 bg-slate-100 rounded-3xl flex justify-center py-12">
           <Image
             src="/cover-anime.png"
             width={500}
