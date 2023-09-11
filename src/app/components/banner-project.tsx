@@ -20,7 +20,7 @@ export function BannerProject({ backdrop = true, project }: CardProjectProps) {
             src={project.thumb.url}
             width={500}
             height={500}
-            className="rounded aspect-video object-cover w-full"
+            className="rounded aspect-video object-cover object-top w-full"
             alt=""
           />
         </div>
@@ -30,17 +30,17 @@ export function BannerProject({ backdrop = true, project }: CardProjectProps) {
             src="/cover-anime.png"
             width={500}
             height={500}
-            className="rounded w-full"
+            className="rounded object-top w-full"
             alt=""
           />
         </div>
       )}
 
       <h3 className="text-xl font-semibold py-4 flex items-center gap-2">
-        <span>{project.title}</span> <ArrowRight />
+        <span>{project.title}</span> <ArrowRight size={16} />
       </h3>
       <div
-        className={`font-light text-lg text-slate-800 dark:text-slate-200 truncate ...`}
+        className={`font-light text-lg text-slate-800 dark:text-slate-200`}
         dangerouslySetInnerHTML={{ __html: project.description }}
       ></div>
     </div>

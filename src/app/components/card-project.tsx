@@ -8,19 +8,24 @@ interface CardProjectProps {
   project: Project
 }
 
-const fraunces = Fraunces({ subsets: ['latin'] })
-
 export function CardProject({ project }: CardProjectProps) {
   return (
     <Link href={project.preview} className="h-full w-96 block px-1">
       <div className="w-full p-4 dark:bg-slate-900 bg-slate-50 rounded-lg">
-        <div className="flex rounded items-center justify-center h-72 bg-gradient-to-r dark:from-slate-900 from-slate-100 to-blue-50">
+        <div
+          className={`flex relative rounded items-center justify-center h-72 overflow-hidden`}
+        >
+          <img
+            src={project.thumb.url}
+            className="rounded object-cover h-full top-0 left-0 right-0 bottom-0 absolute"
+            style={{ filter: 'blur(60px)' }}
+            alt=""
+          />
           <Image
-            src={project.thumb.url} // "https://framerusercontent.com/images/gtxhaHb4Xcmn4xzHti6evxds5nU.png"
+            src={project.thumb.url}
             width={500}
             height={500}
-            quality={10}
-            className="rounded w-full block h-full object-cover"
+            className="z-10 rounded w-[90%] block aspect-video object-cover object-top"
             alt=""
           />
         </div>
