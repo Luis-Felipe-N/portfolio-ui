@@ -1,14 +1,14 @@
-import { Fraunces, Inter } from 'next/font/google'
+import { Instrument_Sans } from 'next/font/google'
 
 import { BannerProject } from './components/banner-project'
-import { Project, Projects } from './components/projects'
+import { Project } from './components/projects'
 import { Skills } from './components/skills'
 import { Header } from './components/header'
 import { api } from './lib/api'
-import Link from 'next/link'
+
 import { Contact } from './components/contact'
 
-const instrumentSans = Inter({ subsets: ['latin'] })
+const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
 const getProjects = async (): Promise<Project[]> => {
   const response = await api.get('projects/home')
@@ -32,7 +32,7 @@ export default async function Home() {
 
         <span className="pb-4 py-2 text-lg line ">Desenvolvedor Fullstack</span>
 
-        <p className={`text-lg sm:text-xl lg:text-2xl font-extralight `}>
+        <p className={`text-lg sm:text-xl lg:text-xl font-extralight `}>
           Estudante de Ciências da Computação apaixonado por programação, com 2
           anos de experiência em Django e focado no desenvolvimento Fullstack
           com habilidades em React, Node.js.

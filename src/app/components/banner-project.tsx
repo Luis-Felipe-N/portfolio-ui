@@ -16,7 +16,7 @@ export function BannerProject({ backdrop = true, project }: CardProjectProps) {
   return (
     <div className="w-full py-12">
       {backdrop ? (
-        <div className="dark:bg-slate-800 bg-slate-100 rounded-3xl flex justify-center lg:p-12">
+        <div className="dark:bg-slate-950 border bg-slate-100 rounded-3xl flex justify-center lg:p-12">
           <Image
             src={project.thumb.url}
             width={500}
