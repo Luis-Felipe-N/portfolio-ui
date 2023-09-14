@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Fraunces } from 'next/font/google'
 import { ArrowRight } from './icons'
 import { Project } from './projects'
+import Link from 'next/link'
 
 const fraunces = Fraunces({ subsets: ['latin'] })
 
@@ -36,8 +37,10 @@ export function BannerProject({ backdrop = true, project }: CardProjectProps) {
         </div>
       )}
 
-      <h3 className="text-xl font-semibold py-4 flex items-center gap-2">
-        <span>{project.title}</span> <ArrowRight size={16} />
+      <h3 className="text-xl font-semibold py-4">
+        <Link className="flex items-center gap-2" href={project.preview}>
+          <span>{project.title}</span> <ArrowRight size={16} />
+        </Link>
       </h3>
       <div
         className={`font-light text-lg text-slate-800 dark:text-slate-200`}
