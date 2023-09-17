@@ -1,4 +1,6 @@
+'use client'
 import { api } from '@/lib/api'
+import { useQuery } from '@tanstack/react-query'
 
 export interface Skill {
   id: string
@@ -14,8 +16,18 @@ const getSkills = async (): Promise<Skill[]> => {
   return data.skills
 }
 
-export async function Skills() {
-  const skills = await getSkills()
+export function Skills() {
+  const { data: skills, isLoading } = useQuery<Skill[]>(
+    ['Skills'],
+    async (): Promise<Skill[]> => {
+      const response = await getSkills()
+      return response
+    },
+  )
+
+  if (isLoading) return <p>carregando...</p>
+
+  if (!skills) return null
 
   return (
     <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">

@@ -32,7 +32,7 @@ export function Contact() {
       <div className="font-mono mt-4 w-full">
         <nav className="flex flex-col gap-2 w-full">
           <Link
-            className="p-4 bg-slate-900 w-full flex gap-4 items-center rounded-md"
+            className="p-4 dark:bg-slate-900 dark:hover:bg-slate-950 hover:bg-slate-200 transition bg-slate-100 w-full flex gap-4 items-center rounded-md"
             href={'https://github.com/Luis-Felipe-N'}
           >
             <svg
@@ -54,7 +54,7 @@ export function Contact() {
           </Link>
 
           <Link
-            className="p-4 bg-slate-900 w-full flex gap-4 items-center rounded-md"
+            className="p-4 dark:bg-slate-900 dark:hover:bg-slate-950 hover:bg-slate-200 transition bg-slate-100 w-full flex gap-4 items-center rounded-md"
             href={'https://www.linkedin.com/in/luisfelipenunescarvalho/'}
           >
             <svg
@@ -76,7 +76,7 @@ export function Contact() {
           </Link>
           <a
             href="/curriculo.pdf"
-            className="p-4 bg-blue-900 w-full flex gap-4 items-center rounded-md"
+            className="p-4 dark:bg-blue-900 bg-blue-200 w-full flex gap-4 items-center rounded-md"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

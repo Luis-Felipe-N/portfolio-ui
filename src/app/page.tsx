@@ -1,24 +1,15 @@
 import { Instrument_Sans } from 'next/font/google'
 
-import { BannerProject } from './components/banner-project'
-import { Project } from './components/projects'
 import { Skills } from './components/skills'
 import { Header } from './components/header'
-import { api } from './lib/api'
 
 import { Contact } from './components/contact'
+import { MainProjects } from './components/main-projects'
+import { Footer } from './components/footer'
 
 const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
-const getProjects = async (): Promise<Project[]> => {
-  const response = await api.get('projects/home')
-  return response.data.projects
-}
-
-export default async function Home() {
-  const projects = await getProjects()
-  const currentYear = new Date().getFullYear()
-
+export default function Home() {
   return (
     <main
       className={`flex min-h-screen flex-col items-center py-24 ${instrumentSans.className}`}
@@ -44,23 +35,14 @@ export default async function Home() {
           projetos...
         </h2>
 
-        <p className={`text-lg mt-4 font-light `}>
-          onde dediquei a maior parte do meu tempo, e é claro, muito estudo.
-        </p>
-
-        {projects.map((project) => (
-          <BannerProject key={project.id} project={project} />
-        ))}
+        <MainProjects />
       </section>
+
       <Skills />
 
       <Contact />
 
-      <footer className="z-10 text-slate-400 max-w-5xl w-full items-start lg:justify-between text-sm flex py-12 pb-0 mt-24 lg:px-0 px-12 flex-wrap justify-center border-slate-50 border-t dark:border-slate-800">
-        <p className="uppercase">luisj2felipe@gmail.com</p>
-
-        <p className="">© {currentYear} Luis Felipe Nunes</p>
-      </footer>
+      <Footer />
     </main>
   )
 }
