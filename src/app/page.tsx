@@ -12,11 +12,11 @@ const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center py-24 ${instrumentSans.className}`}
+      className={`overflow-hidden flex min-h-screen flex-col items-center py-24 ${instrumentSans.className}`}
     >
       <Header />
 
-      <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">
+      <section className="  px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">
         <h1 className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">
           Luis Felipe Nunes
         </h1>
@@ -30,7 +30,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex pt-24">
+      <section className="  px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex pt-24">
         <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
           projetos...
         </h2>

@@ -1,0 +1,36 @@
+.header {
+
+}
+
+// .menuMobile {
+//   display: none;
+// }
+
+@media (max-width: 620px) {
+  .header {
+    nav {
+      position: absolute;
+      max-width: 400px;
+      width: 100%;
+
+      bottom: 0;
+      top: 0;
+      right: -100%;
+
+      padding: 10rem 1rem;
+
+      display: flex;
+      gap: 0;
+      flex-direction: column;
+
+      a {
+        display: block;
+        padding: 1rem;
+      }
+    }
+    nav.active {
+      right: 0 !important;
+    }
+  }
+
+}

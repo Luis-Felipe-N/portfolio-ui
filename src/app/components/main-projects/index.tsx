@@ -2,10 +2,11 @@
 
 import { api } from '@/lib/api'
 
-import { Project } from '../projects'
 import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from '../ui/skeleton'
 import { CardProject } from '../card-project'
+
+import { Project } from '@/(app)/projects/page'
 
 const getProjects = async (): Promise<Project[]> => {
   const response = await api.get('projects/home')
@@ -20,8 +21,6 @@ export function MainProjects() {
       return response
     },
   )
-
-  console.log(projects)
 
   if (isLoading) {
     return (
@@ -39,7 +38,7 @@ export function MainProjects() {
   }
 
   return (
-    <div className="grid grid-cols-2 mt-12">
+    <div className="grid lg:grid-cols-2 mt-12 gap-2">
       {projects.map((project) => (
         <CardProject key={project.id} project={project} />
       ))}

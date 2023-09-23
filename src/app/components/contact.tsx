@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Contact() {
   return (
-    <section className="z-10 px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex ">
+    <section className="  px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex ">
       <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
         contato
       </h2>
