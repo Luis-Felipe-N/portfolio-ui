@@ -31,7 +31,7 @@ export function CardProject({ project }: CardProjectProps) {
 
       <div className="h-full">
         <div
-          className={`font-light lg:text-lg text-slate-800 dark:text-slate-200`}
+          className={`font-light lg:text-base text-slate-800 dark:text-slate-200`}
           dangerouslySetInnerHTML={{ __html: project.description }}
         ></div>
       </div>

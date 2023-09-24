@@ -6,6 +6,8 @@ import { Header } from './components/header'
 import { Contact } from './components/contact'
 import { MainProjects } from './components/main-projects'
 import { Footer } from './components/footer'
+import Link from 'next/link'
+import { ArrowRight } from '@phosphor-icons/react'
 
 const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
@@ -30,12 +32,19 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="  px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex pt-24">
+      <section className="px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex pt-24">
         <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
           projetos...
         </h2>
 
         <MainProjects />
+
+        <Link
+          className="flex items-center gap-1 hover:font-medium mt-8 p-4 px-8 bg-slate-50 rounded-xl"
+          href={'/projects'}
+        >
+          Ver todos
+        </Link>
       </section>
 
       <Skills />

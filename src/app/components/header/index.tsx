@@ -39,7 +39,7 @@ export function Header() {
       </nav>
 
       <button
-        className={`z-40 ${styles.menuMobile}`}
+        className={`z-40 lg:hidden md:hidden ${styles.menuMobile}`}
         onClick={() => setOpenMenu(!openMenu)}
       >
         menu
