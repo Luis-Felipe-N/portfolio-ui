@@ -34,7 +34,7 @@ export function MainProjects() {
   }
 
   if (!projects) {
-    return <h1>Nao foi possível buscar os projetos</h1>
+    return <h1 className="mt-4">Nao foi possível buscar os projetos</h1>
   }
 
   return (

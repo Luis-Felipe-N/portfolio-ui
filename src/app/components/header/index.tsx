@@ -19,11 +19,11 @@ export function Header() {
       </Link>
 
       <nav
-        className={`bg-slate-200 sm:bg-transparent z-30 lg:bg-transparent ${
+        className={`bg-slate-100 sm:bg-transparent z-30 lg:bg-transparent ${
           openMenu ? styles.active : ''
-        }}`}
+        }`}
       >
-        <ul className="flex gap-8">
+        <ul className="flex bg-slate-100 sm:bg-transparent z-30 lg:bg-transparent gap-8">
           <li>
             <Link href={'/'}>inicio</Link>
           </li>
@@ -31,15 +31,11 @@ export function Header() {
           <li>
             <Link href={'/projects'}>projetos</Link>
           </li>
-
-          <li>
-            <Link href={'/'}>contato</Link>
-          </li>
         </ul>
       </nav>
 
       <button
-        className={`z-40 lg:hidden md:hidden ${styles.menuMobile}`}
+        className={`flex items-center gap-1 hover:font-medium p-4 px-8 bg-slate-50 rounded-xl z-40 lg:hidden md:hidden ${styles.menuMobile}`}
         onClick={() => setOpenMenu(!openMenu)}
       >
         menu

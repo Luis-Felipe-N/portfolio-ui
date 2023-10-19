@@ -34,7 +34,7 @@ export default function Home() {
 
       <section className="px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex pt-24">
         <h2 className="text-slate-900 font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight dark:text-white">
-          projetos...
+          projetos
         </h2>
 
         <MainProjects />

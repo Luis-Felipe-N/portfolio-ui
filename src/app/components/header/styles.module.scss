@@ -9,6 +9,7 @@
 @media (max-width: 620px) {
   .header {
     nav {
+      transition: .2s;
       position: absolute;
       max-width: 400px;
       width: 100%;
@@ -19,15 +20,18 @@
 
       padding: 10rem 1rem;
 
-      display: flex;
-      gap: 0;
-      flex-direction: column;
+      ul {  
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+      }
 
       a {
         display: block;
-        padding: 1rem;
+        padding: 1rem 3rem;
       }
     }
+
     nav.active {
       right: 0 !important;
     }

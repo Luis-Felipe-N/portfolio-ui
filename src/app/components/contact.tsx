@@ -53,7 +53,7 @@ export function Contact() {
             <span>LinkedIn</span>
           </Link>
           <a
-            href="/curriculo.pdf"
+            href="/curriculo-luis-felipe.pdf"
             className="p-4 dark:bg-blue-900 bg-blue-200 w-full flex gap-4 items-center rounded-md"
           >
             <svg
