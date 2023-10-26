@@ -19,7 +19,7 @@ export function CardProject({ project }: CardProjectProps) {
           width={390}
           height={220}
           quality={50}
-          className="rounded-t-xl aspect-video  object-top w-full"
+          className="rounded-t-xl aspect-video object-contain object-top w-full"
           alt=""
         />
       </div>
