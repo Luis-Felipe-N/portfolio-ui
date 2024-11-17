@@ -1,9 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-
-import styles from './styles.module.scss'
 import { useState } from 'react'
+import styles from './styles.module.scss'
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -14,8 +13,7 @@ export function Header() {
     >
       <Link href={'/'} className="flex flex-col">
         <strong className="uppercase">Luis Felipe Nunes</strong>
-
-        <small>i'm a developer</small>
+        <small>i&apos;m a developer</small>
       </Link>
 
       <nav
@@ -26,7 +24,6 @@ export function Header() {
           <li>
             <Link href={'/'}>inicio</Link>
           </li>
-
           <li>
             <Link href={'/projects'}>projetos</Link>
           </li>

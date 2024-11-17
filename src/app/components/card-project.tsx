@@ -10,7 +10,6 @@ interface CardProjectProps {
 }
 
 export function CardProject({ project }: CardProjectProps) {
-
   return (
     // <Link href={project.preview} className="h-full" target="_blank">
     <div className="w-full dark:bg-slate-900 bg-slate-50 dark:hover:bg-slate-950 hover:bg-slate-100 h-full lg:p-8 p-4 rounded-3xl transition flex flex-col">
@@ -61,6 +60,5 @@ export function CardProject({ project }: CardProjectProps) {
         )}
       </div>
     </div>
-    // </Link>
   )
 }

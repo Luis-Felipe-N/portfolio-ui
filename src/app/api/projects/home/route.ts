@@ -42,7 +42,9 @@ export async function GET(request: NextRequest) {
   }
 `)
 
-  const projects = data.allProjects.filter((item: Project) => idsProjects.includes(item.id))
+  const projects = data.allProjects.filter((item: Project) =>
+    idsProjects.includes(item.id),
+  )
 
   return NextResponse.json({
     projects,
