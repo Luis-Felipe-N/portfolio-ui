@@ -15,13 +15,12 @@ export function Header() {
       <Link href={'/'} className="flex flex-col">
         <strong className="uppercase">Luis Felipe Nunes</strong>
 
-        <small>i develop</small>
+        <small>i'm a developer</small>
       </Link>
 
       <nav
-        className={`bg-slate-100 sm:bg-transparent z-30 lg:bg-transparent ${
-          openMenu ? styles.active : ''
-        }`}
+        className={`bg-slate-100 sm:bg-transparent z-30 lg:bg-transparent ${openMenu ? styles.active : ''
+          }`}
       >
         <ul className="flex bg-slate-100 sm:bg-transparent z-30 lg:bg-transparent gap-8">
           <li>

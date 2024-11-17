@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { fetchCMSApi } from '@/lib/dato-cms'
+import { Project } from '@/(app)/projects/page'
 
 export async function GET(request: NextRequest) {
   const { allHomeProjects } = await fetchCMSApi(`{
@@ -17,7 +18,7 @@ export async function GET(request: NextRequest) {
 
   const data = await fetchCMSApi(`
   {
-    allProjects(filter: {id: {in: [${idsProjects}]}}) {
+    allProjects(orderBy: _createdAt_DESC, first: "100") {
       id
       _firstPublishedAt
       title
@@ -38,10 +39,10 @@ export async function GET(request: NextRequest) {
         thumbnailUrl
       }
     }
-  }  
-  `)
+  }
+`)
 
-  const projects = data.allProjects
+  const projects = data.allProjects.filter((item: Project) => idsProjects.includes(item.id))
 
   return NextResponse.json({
     projects,

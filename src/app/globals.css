@@ -79,3 +79,12 @@
 	0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-24rem * 33))}
 }
+
+.text-description {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden; 
+
+}

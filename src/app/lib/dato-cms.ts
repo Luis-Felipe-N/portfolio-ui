@@ -15,7 +15,6 @@ export const fetchCMSApi = async (query: string) => {
     },
     body: JSON.stringify({
       query,
-      variables: {},
     }),
   })
 
