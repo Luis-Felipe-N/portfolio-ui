@@ -7,14 +7,13 @@ import { Contact } from './components/contact'
 import { MainProjects } from './components/main-projects'
 import { Footer } from './components/footer'
 import Link from 'next/link'
-import { ArrowRight } from '@phosphor-icons/react'
 
 const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main
-      className={`overflow-hidden flex min-h-screen flex-col items-center py-24 ${instrumentSans.className}`}
+      className={`overflow-hidden flex min-h-screen flex-col items-center ${instrumentSans.className}`}
     >
       <Header />
 
