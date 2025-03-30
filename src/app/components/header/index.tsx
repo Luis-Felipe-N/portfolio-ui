@@ -14,17 +14,17 @@ const LINKS: ILink[] = [
     title: 'bem-vindo',
     path: '/'
   },
-  {
-    title: 'acadêmico',
-    path: '/'
-  },
-  {
-    title: 'profissional',
-    path: '/'
-  },
+  // {
+  //   title: 'acadêmico',
+  //   path: '/'
+  // },
+  // {
+  //   title: 'profissional',
+  //   path: '/'
+  // },
   {
     title: 'projetos',
-    path: '/'
+    path: '/projects'
   },
 ]
 
