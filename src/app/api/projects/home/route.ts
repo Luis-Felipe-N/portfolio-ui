@@ -28,6 +28,7 @@ export async function GET(request: NextRequest) {
         title
       }
       languages
+      finalizado
       preview
       description
       code

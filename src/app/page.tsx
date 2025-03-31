@@ -15,9 +15,7 @@ export default function Home() {
     <main
       className={`overflow-hidden flex min-h-screen flex-col items-center ${instrumentSans.className}`}
     >
-      <Header />
-
-      <section className="  px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">
+      <section className="px-12 max-w-5xl w-full items-start justify-between flex-col text-sm flex py-24">
         <h1 className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">
           Luis Felipe Nunes
         </h1>
@@ -50,7 +48,6 @@ export default function Home() {
 
       <Contact />
 
-      <Footer />
     </main>
   )
 }

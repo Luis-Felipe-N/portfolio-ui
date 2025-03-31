@@ -14,16 +14,7 @@ export function CardProject({ project }: CardProjectProps) {
     // <Link href={project.preview} className="h-full" target="_blank">
     <div className="w-full dark:bg-slate-900 bg-slate-50 dark:hover:bg-slate-950 hover:bg-slate-100 h-full lg:p-8 p-4 rounded-3xl transition flex flex-col">
       <div className="flex justify-center">
-        {project.thumb && (
-          <Image
-            src={project.thumb.url}
-            width={390}
-            height={220}
-            quality={50}
-            className="rounded-t-xl aspect-video object-contain object-top w-full"
-            alt=""
-          />
-        )}
+
       </div>
 
       <h3 className="text-xl flex items-center gap-2 font-semibold py-4">
