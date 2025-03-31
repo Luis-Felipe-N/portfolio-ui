@@ -1,8 +1,6 @@
-'use client'
+
 
 import Link from 'next/link'
-import { useState } from 'react'
-import styles from './styles.module.scss'
 
 interface ILink {
   title: string,
@@ -33,7 +31,7 @@ export function Header() {
   return (
 
     <header
-      className={`px-12 w-full flex justify-center bg-slate-900 text-slate-100 pt-24 ${styles.header}`}
+      className={`px-12 w-full flex justify-center bg-slate-900 text-slate-100 pt-8 `}
     >
 
       <div className='max-w-5xl m-x-auto w-full items-center  font-mono text-sm flex flex-col'>
@@ -51,7 +49,7 @@ export function Header() {
           </div>
         </div>
 
-        <nav className="py-10">
+        <nav className="py-8">
           <ul className="flex flex-wrap justify-center ">
             {LINKS.map(link => (
               <li key={link.path} >

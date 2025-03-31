@@ -7,7 +7,7 @@ const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
 export default function pagesApp({ children }: { children: React.ReactNode }) {
 
     return (
-        <div className='max-w-5xl w-full mx-auto p-12'>
+        <div className='max-w-5xl w-full mx-auto py-12 px-12 lg:px-0'>
 
             {children}
         </div>

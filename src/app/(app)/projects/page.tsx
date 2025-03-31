@@ -43,7 +43,7 @@ export default async function Projects() {
   console.log(projects)
   return (
     <>
-      <h1 className="font-medium text-2xl">Projects</h1>
+      <h1 className="font-bold text-slate-900 text-3xl">projects</h1>
       <ul className="flex flex-col gap-4">
         {projects && projects.map((project) => (
           <li key={project.id} className="border-b-2 pb-12 mt-12">
@@ -54,7 +54,7 @@ export default async function Projects() {
                   width={72}
                   height={72}
                   quality={100}
-                  className="rounded-lg object-cover object-top"
+                  className="rounded-lg object-contain object-center bg-slate-200"
                   alt=""
                 />
               )}
