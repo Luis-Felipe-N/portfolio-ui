@@ -22,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <Header />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <QueryProvider>{children}</QueryProvider>
         </ThemeProvider>
