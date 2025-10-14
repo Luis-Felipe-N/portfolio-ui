@@ -23,8 +23,8 @@ export default function Home() {
   )
   return (
     <div className="bg-[#faf9f6]">
-      <main className="">
-        <section className="h-screen grid place-items-center">
+      <main >
+        <section className="h-screen grid place-items-center px-8">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2">
               <Image
