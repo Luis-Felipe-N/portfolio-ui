@@ -32,7 +32,7 @@ const getProjects = async (): Promise<Project[]> => {
 
 export default async function Projects() {
 
-  const { data: projects, isLoading } = useQuery<Project[]>(
+  const { data: projects } = useQuery<Project[]>(
     ['Projects'],
     async (): Promise<Project[]> => {
       const response = await getProjects()

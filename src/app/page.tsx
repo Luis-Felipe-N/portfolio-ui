@@ -8,8 +8,6 @@ import type { Project } from './(app)/projects/page'
 import { api } from './lib/api'
 import { useQuery } from '@tanstack/react-query'
 
-const instrumentSans = Instrument_Sans({ subsets: ['latin'] })
-
 const getProjects = async (): Promise<Project[]> => {
   const response = await api.get('projects/')
   return response.data.projects
@@ -37,7 +35,7 @@ export default function Home() {
                 className="object-cover rounded-2xl"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl text-[#343330]">I'm Luis Felipe</h1>
+                <h1 className="text-2xl text-[#343330]">Im Luis Felipe</h1>
                 <small>FullStack Developer</small>
               </div>
             </div>
@@ -60,7 +58,7 @@ export default function Home() {
 
             <ul className="py-24 space-y-24">
               {projects && projects.map(project => (
-                <li className="grid grid-cols-2 place-items-center gap-8  px-8">
+                <li key={project.id} className="grid grid-cols-2 place-items-center gap-8  px-8">
                   <div className="col-span-2 lg:col-span-1">
                     <ul className="flex items-center gap-2 text-[#303134]">
                       <li>{project.createdAt.slice(0, 4)}</li>
